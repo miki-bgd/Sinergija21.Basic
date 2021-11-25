@@ -14,5 +14,10 @@ namespace Sinergija21.Basic
 		{
 			InitializeComponent();
 		}
+
+		private void AddLine_Clicked(object sender, EventArgs e)
+		{
+			DI.Display.DrawLine();
+		}
 	}
 }

@@ -5,6 +5,7 @@
 
     <Grid Padding="10">
 		<infrastructure:ARView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="LightBlue"/>
+		<Button Text="Add Line" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGray" Clicked="AddLine_Clicked"/>
 	</Grid>
 
 </ContentPage>
