@@ -23,6 +23,10 @@ namespace Sinergija21.Basic.Droid.Model3dCreators
 			var xAxis = new Node();
 			var yAxis = new Node();
 			var zAxis = new Node();
+			n.AddChild(xAxis);
+			n.AddChild(yAxis);
+			n.AddChild(zAxis);
+
 			Action<Node, Color, Vector3> createNode = (node, c, v) =>
 			{
 				MaterialFactory

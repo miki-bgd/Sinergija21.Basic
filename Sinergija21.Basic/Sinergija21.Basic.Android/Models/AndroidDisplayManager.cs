@@ -35,7 +35,15 @@ namespace Sinergija21.Basic.Droid.Models
 
 		public int DrawLine()
 		{
-			var n = LineCreator.Create(new Google.AR.Sceneform.Math.Vector3(0, 0, 0), 0.5f);
+			var n = LineCreator.Create(new Vector3(0, 0, 0), 0.5f);
+			n.SetParent(fragment.ArSceneView.Scene);
+			int id = nodeId++;
+			nodes.Add(id, n);
+			return id;
+		}
+		public int DrawSphere()
+		{
+			var n = SphereCreator.Create(new Vector3(0, 0, 0), 0.5f);
 			n.SetParent(fragment.ArSceneView.Scene);
 			int id = nodeId++;
 			nodes.Add(id, n);
