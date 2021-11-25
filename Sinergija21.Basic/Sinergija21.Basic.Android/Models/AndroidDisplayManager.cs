@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using num = System.Numerics;
 
 namespace Sinergija21.Basic.Droid.Models
 {
@@ -41,9 +42,11 @@ namespace Sinergija21.Basic.Droid.Models
 			nodes.Add(id, n);
 			return id;
 		}
-		public int DrawSphere()
+		public int DrawSphere(num.Vector3 position, float radius)
 		{
-			var n = SphereCreator.Create(new Vector3(0, 0, 0), 0.5f);
+			var p = position;
+			var q = new Vector3(p.X, p.Y, p.Z);
+			var n = SphereCreator.Create(q, radius * 2);
 			n.SetParent(fragment.ArSceneView.Scene);
 			int id = nodeId++;
 			nodes.Add(id, n);
