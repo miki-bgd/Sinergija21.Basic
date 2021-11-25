@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Sinergija21.Basic.Droid.Models;
 
 namespace Sinergija21.Basic.Droid
 {
@@ -13,6 +14,8 @@ namespace Sinergija21.Basic.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+			DI.Display = new AndroidDisplayManager();
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

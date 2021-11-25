@@ -8,6 +8,7 @@ using Google.AR.Sceneform;
 using Google.AR.Sceneform.Math;
 using Google.AR.Sceneform.Rendering;
 using Google.AR.Sceneform.UX;
+using Sinergija21.Basic.Droid.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +27,7 @@ namespace Sinergija21.Basic.Droid.Infrastructure
 
 		private void CustomArFragment_SessionInitialization(object sender, SessionInitializationEventArgs e)
 		{
-			// When session is initialized, we can add 3d models.
-			//DrawLine(1);
-			//DrawCoordinateSystem(0.5f);
-
+			((AndroidDisplayManager)DI.Display).Initialize(this);
 		}
 		
 	}
