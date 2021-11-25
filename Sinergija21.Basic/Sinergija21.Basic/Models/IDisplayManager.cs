@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace Sinergija21.Basic.Models
@@ -10,7 +11,7 @@ namespace Sinergija21.Basic.Models
 
 		int DrawLine();
 
-		int DrawSphere();
+		int DrawSphere(Vector3 position, float radius);
 
 		int DrawCoordinateSystem();
 

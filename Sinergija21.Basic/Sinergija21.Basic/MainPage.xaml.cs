@@ -19,7 +19,7 @@ namespace Sinergija21.Basic
 		private void Display_Initialized()
 		{
 			DI.Display.DrawCoordinateSystem();
-			DI.Display.DrawSphere();
+			DI.Display.DrawSphere(new System.Numerics.Vector3(0.5f, 0.1f, 0.5f), 0.1f);
 		}
 
 		private async void AddLine_Clicked(object sender, EventArgs e)
