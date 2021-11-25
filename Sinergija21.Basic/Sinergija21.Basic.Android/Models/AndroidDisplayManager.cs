@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Google.AR.Sceneform;
+using Google.AR.Sceneform.Math;
 using Google.AR.Sceneform.UX;
 using Sinergija21.Basic.Droid.Model3dCreators;
 using Sinergija21.Basic.Models;
@@ -41,9 +42,12 @@ namespace Sinergija21.Basic.Droid.Models
 			return id;
 		}
 
-		public void RotateModelZ(int id, float angleDeg)
+		public void SetModelZRotation(int id, float angleDeg)
 		{
-			throw new NotImplementedException();
+			if (!nodes.ContainsKey(id))
+				throw new NullReferenceException($"Object {id} doesn't exist!");
+			var n = nodes[id];
+			n.WorldRotation = Quaternion.AxisAngle(Vector3.Up(), angleDeg);
 		}
 
 		public void Initialize(ArFragment fragment)
