@@ -34,6 +34,7 @@ namespace Sinergija21.Basic.Droid.Infrastructure
 		VisualElementTracker visualElementTracker;
 		VisualElementRenderer visualElementRenderer;
 		FragmentManager fragmentManager;
+		ArFragment arFragment;
 
 		private FragmentManager FragmentManager { get { fragmentManager = (Context.GetActivity() as FragmentActivity)?.SupportFragmentManager; return fragmentManager; } }
 
@@ -61,10 +62,12 @@ namespace Sinergija21.Basic.Droid.Infrastructure
 
 		void OnElementChanged(ElementChangedEventArgs<ARView> e)
 		{
+			ArFragment newFragment = null;
 
 			if (e.OldElement != null)
 			{
 				e.OldElement.PropertyChanged -= OnElementPropertyChanged;
+				arFragment.Dispose();
 			}
 			if (e.NewElement != null)
 			{
@@ -73,7 +76,11 @@ namespace Sinergija21.Basic.Droid.Infrastructure
 				e.NewElement.PropertyChanged += OnElementPropertyChanged;
 
 				ElevationHelper.SetElevation(this, e.NewElement);
+				newFragment = new CustomArFragment();
 			}
+			FragmentManager.BeginTransaction()
+				.Replace(Id, arFragment = newFragment, "custom_ar_fragment")
+				.Commit();
 			ElementChanged?.Invoke(this, new VisualElementChangedEventArgs(e.OldElement, e.NewElement));
 		}
 
@@ -165,6 +172,11 @@ namespace Sinergija21.Basic.Droid.Infrastructure
 				return;
 			}
 
+			FragmentManager.BeginTransaction()
+				.Remove(arFragment)
+				.Commit();
+			arFragment.Dispose();
+			arFragment = null;
 
 			disposed = true;
 
