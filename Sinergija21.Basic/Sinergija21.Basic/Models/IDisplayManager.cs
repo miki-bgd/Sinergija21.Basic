@@ -16,6 +16,6 @@ namespace Sinergija21.Basic.Models
 		/// Rotates modela round Z axis (right-handed coordinate system 
 		/// rotation goes counter-clockwise).
 		/// </summary>
-		void RotateModelZ(int id, float angleDeg);
+		void SetModelZRotation(int id, float angleDeg);
 	}
 }

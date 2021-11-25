@@ -15,9 +15,19 @@ namespace Sinergija21.Basic
 			InitializeComponent();
 		}
 
-		private void AddLine_Clicked(object sender, EventArgs e)
+		private async void AddLine_Clicked(object sender, EventArgs e)
 		{
-			DI.Display.DrawLine();
+			int lineId = DI.Display.DrawLine();
+			float currentAngle = 0;
+			float angleStepDeg = 9;
+			while(true)
+			{
+				await Task.Delay(50);
+				DI.Display.SetModelZRotation(lineId, currentAngle);
+				currentAngle += angleStepDeg;
+				if (currentAngle > 360)
+					currentAngle -= 360;
+			}
 		}
 	}
 }
