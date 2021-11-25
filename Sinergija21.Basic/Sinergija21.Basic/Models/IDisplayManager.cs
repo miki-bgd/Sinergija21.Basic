@@ -15,6 +15,8 @@ namespace Sinergija21.Basic.Models
 
 		int DrawCoordinateSystem();
 
+		int LoadModel(string name);
+
 		/// <summary>
 		/// Rotates modela round Z axis (right-handed coordinate system 
 		/// rotation goes counter-clockwise).

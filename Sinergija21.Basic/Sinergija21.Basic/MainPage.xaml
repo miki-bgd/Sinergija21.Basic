@@ -5,7 +5,10 @@
 
     <Grid Padding="10">
 		<infrastructure:ARView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="LightBlue"/>
-		<Button Text="Add Line" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGray" Clicked="AddLine_Clicked"/>
+		<StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
+			<Button Text="Add Line"  BackgroundColor="LightGray" Clicked="AddLine_Clicked"/>
+			<Button Text="Add model" Margin="10, 0, 0, 0" Clicked="AddModel_Clicked"/>
+		</StackLayout>
 	</Grid>
 
 </ContentPage>

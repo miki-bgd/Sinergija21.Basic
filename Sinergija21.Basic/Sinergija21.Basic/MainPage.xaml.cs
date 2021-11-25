@@ -36,5 +36,9 @@ namespace Sinergija21.Basic
 					currentAngle -= 360;
 			}
 		}
+		public void AddModel_Clicked(object sender, EventArgs e)
+		{
+			DI.Display.LoadModel("a7logo.glb");
+		}
 	}
 }
