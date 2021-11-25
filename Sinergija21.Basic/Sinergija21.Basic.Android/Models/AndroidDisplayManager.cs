@@ -52,6 +52,16 @@ namespace Sinergija21.Basic.Droid.Models
 			nodes.Add(id, n);
 			return id;
 		}
+		public int LoadModel(string name)
+		{
+			var position = fragment.ArSceneView.Scene.Camera.WorldPosition;
+			var n = ExternalModelCreator.LoadGlb(name, position);
+			n.SetParent(fragment.ArSceneView.Scene);
+			int id = nodeId++;
+			nodes.Add(id, n);
+			return id;
+		}
+
 
 		public void SetModelZRotation(int id, float angleDeg)
 		{
