@@ -13,6 +13,13 @@ namespace Sinergija21.Basic
 		public MainPage()
 		{
 			InitializeComponent();
+			DI.Display.Initialized += Display_Initialized;
+		}
+
+		private void Display_Initialized()
+		{
+			DI.Display.DrawCoordinateSystem();
+			DI.Display.DrawSphere();
 		}
 
 		private async void AddLine_Clicked(object sender, EventArgs e)

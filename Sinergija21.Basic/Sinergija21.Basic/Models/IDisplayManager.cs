@@ -10,6 +10,8 @@ namespace Sinergija21.Basic.Models
 
 		int DrawLine();
 
+		int DrawSphere();
+
 		int DrawCoordinateSystem();
 
 		/// <summary>
