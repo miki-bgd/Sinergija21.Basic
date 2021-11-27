@@ -27,7 +27,10 @@ namespace Sinergija21.Basic.Droid.Infrastructure
 
 		private void CustomArFragment_SessionInitialization(object sender, SessionInitializationEventArgs e)
 		{
+			// Session is not yet ready, and e.Session loses AugmentedImageDatabase.
+			// Better is to use session from first Scene.Update.
 			((AndroidDisplayManager)DI.Display).Initialize(this);
+			AugmentedImageServiceManager.Instance.Initialize(this);
 		}
 		
 	}

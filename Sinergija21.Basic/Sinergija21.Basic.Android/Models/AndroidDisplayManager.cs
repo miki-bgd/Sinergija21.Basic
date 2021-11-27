@@ -71,7 +71,12 @@ namespace Sinergija21.Basic.Droid.Models
 			n.WorldRotation = Quaternion.AxisAngle(Vector3.Up(), angleDeg);
 		}
 
-		public void Initialize(ArFragment fragment)
+		internal Node LoadModelInternal(string name, Vector3 position)
+		{
+			var n = ExternalModelCreator.LoadGlb(name, position);
+			return n;
+		}
+		internal void Initialize(ArFragment fragment)
 		{
 			this.fragment = fragment;
 			Initialized?.Invoke();
