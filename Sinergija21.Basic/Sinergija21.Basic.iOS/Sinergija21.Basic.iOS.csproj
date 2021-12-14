@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
+    <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,12 +62,20 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\AREventDelegate.cs" />
+    <Compile Include="Infrastructure\ARKitViewRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <SceneKitAsset Include="art.scnassets\earth\earth.mtl" />
+    <SceneKitAsset Include="art.scnassets\earth\earth.obj" />
+    <SceneKitAsset Include="art.scnassets\earth\earth.dae" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
+    <Compile Include="Models\CameraUpdater.cs" />
+    <Compile Include="Models\iOSDisplayManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,5 +144,9 @@
       <Project>{4C7CC86C-5325-4011-A9FA-ED94B68DCDA9}</Project>
       <Name>Sinergija21.Basic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <SceneKitAsset Include="art.scnassets\earth\map.jpg" />
   </ItemGroup>
 </Project>

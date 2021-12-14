@@ -34,5 +34,7 @@
     <string>Sinergija21.Basic</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need Camera for Augmented Reality Car Wash view</string>
 </dict>
 </plist>
